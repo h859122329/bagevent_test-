@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace属性的指向对应的dao接口的完全限定类名 -->
+<mapper namespace="com.example.bagevent_test.dao.UserLoginLogDao">
+    <insert id="isnertOneUserLog">
+       INSERT INTO UserLoginLog (user_id,login_time,login_ip) VALUES(#{loguser.userid},CURDATE(),#{loguser.loginip})
+    </insert>
+    <select id="selectOneUserLoginLog" resultType="com.example.bagevent_test.entity.UserLoginLog">
+        select * from  UserLoginLog
+    </select>
+</mapper>

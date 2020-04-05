@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace属性的指向对应的dao接口的完全限定类名 -->
+<mapper namespace="com.example.bagevent_test.dao.UserDao">
+    <insert id="insert">
+      INSERT INTO `user` (user_name,email,cellphone,`password`,salt,state,create_time) VALUE
+	  (null,#{number},null,#{pwd},null,1,CURDATE())
+    </insert>
+
+    <select id="checkUser" resultType="com.example.bagevent_test.entity.User">
+      SELECT * FROM `User` WHERE email=#{number} AND `password`=#{pwd}
+    </select>
+</mapper>
